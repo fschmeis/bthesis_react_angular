@@ -1,10 +1,8 @@
 # Recherchenotizen
 
-
-
 ## Vergleich
 
-### Angular 
+### Angular
 
 https://angular.io/start
 

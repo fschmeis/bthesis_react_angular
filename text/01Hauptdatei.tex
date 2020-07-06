@@ -13,7 +13,7 @@
 % Dokumentenklasse %
 \documentclass[
 ngerman,
-toc=flat,
+%toc=flat,
 toc=chapterentrywithdots,
 captions=tableabove,
 listof=entryprefix,
@@ -32,6 +32,7 @@ usegeometry,
 \usepackage{babel}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage{geometry}
 \geometry{
@@ -106,15 +107,13 @@ usegeometry,
 \listoffigures
 \listoftables
 %
-\chapter{Einleitung}
-Ein Textbeispiel. \cite{schlosser}
-
-Ein neuer Absatz und ein weiteres Zitat \cite{nadler}.
-\captionof{figure}{Bildunterschrift}
-\captionof{table}{Tabellenüberschrift}
-%\input{Kapitel/...}
-%\input{Kapitel/...}
-%\input{Kapitel/...}
+\input{Kapitel/00_Einleitung}
+\input{Kapitel/01_Allgemeines}
+\input{Kapitel/02_Technischer_Vergleich}
+\input{Kapitel/03_Implementation}
+\input{Kapitel/04_Performance_Test}
+\input{Kapitel/05_Auswertung}
+\input{Kapitel/06_Fazit}
 %
 \begin{singlespacing}
 \printbibliography
