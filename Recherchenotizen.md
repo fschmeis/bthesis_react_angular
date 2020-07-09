@@ -47,3 +47,8 @@ https://programmingwithmosh.com/react/react-vs-angular/
 https://medium.com/better-programming/my-favourite-react-stack-1beda91ae909
 
 https://blog.codecentric.de/2020/04/mock-server-mit-json-server-und-typescript/
+
+https://www.base-search.net/Search/Results?lookfor=Framework+tit%3AAngular+year%3A%5B2019+TO+%2A%5D&type=allus&page=3&l=en&oaboost=1&refid=dcpageen
+
+https://www.theseus.fi/bitstream/handle/10024/261970/Thesis-Elar-Saks.pdf?sequence=2&isAllowed=y
+
