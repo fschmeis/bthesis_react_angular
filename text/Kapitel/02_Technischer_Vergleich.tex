@@ -1,31 +1,150 @@
-\chapter{Technischer Vergleich}
+\chapter{Technische Aspekte}
+Im folgenden Kapitel geht es um den konkretem technischen Vergleich zwischen Angular und React. Zunächst werden grundlegende Pattern und Modelle präsentiert, die in unterschiedlichem Maß und Form in die Entwicklung der Frameworks eingeflossen sind.
 
-\section{Components}
+Die angeschnittenen Punkte decken nicht das gesamte Spektrum der verwendeten Technologien ab. Besonders React als erweiterbare JavaScript-Bibliothek forciert nur bedingt eine gewisse Architektur. Angular ist an diesem Punkt strikter, auf Entsprechungen für die Entwicklung mit React wird eingegangen.
+\section{Grundlegende Schnittstellen und Pattern}
+\subsection{Components}
+2004 erscheint im Blog des Entwicklers und Architekturspezialisten Martin Fowler ein Artikel mit dem Titel ''Inversion of Control Containers and the Dependency Injection pattern''. In diesem Artikel beschreibt er u.A. das Entwurfsmuster Dependency Injection (DI) als präziseren Begriff für Inversion of Control. Die Erkenntnisse aus dieser Betrachtung definieren einige grundlegende Pattern von Angular, die in den folgenden Abschnitten erläutert werden. React ist nicht so stark an diese Konzepte gebunden, allerdings bauen gängige React-Bibliotheken auf diesen Mustern auf.
 
-\subsection{Komponentenmodell}
-
-\subsection{Angular}
-
-\subsection{React}
-
-\section{Weitere Features}
-\subsection{Angular}
-\subsection{React}
-
-\section{Lifecycle}
-\subsection{Angular}
-\subsection{React}
-
-\section{DOM}
-\subsubsection{Regular DOM}
-\subsubsection{Virtual DOM}
-\subsubsection{Vergleich}
-
-\section{Integrierte Design Pattern}
+Components sind in der Terminologie nicht eineindeutig. Martin Fowler beschreibt seine Einordnung wie folgt: ''I use component to mean a glob of software that's intended to be used, without change, by an application that is out of the control of the writers of the component. By 'without change' I mean that the using application doesn't change the source code of the components, although they may alter the component's behavior by extending it in ways allowed by the component writers.''
+(https://martinfowler.com/articles/injection.html\#ComponentsAndServices)
+Mit diesem Ansatz kann man Komponenten in Angular ebenfalls betrachten. Eine Komponente ist in sich abgeschlossen und sollte von außen nicht verändert werden. Das Verhalten lässt sich allerdings ändern: Eine Beispielkomponente bietet eine Tabelle zum Anzeigen von Daten. Von außen lässt sich die Komponente bezüglich der Spalten, Zeilen, Styles und Inhalten in einem definierten Rahmen beeinflussen.
 \subsection{Dependency Injection}
-\subsection{Services}
-\subsection{Decorators}
-\subsection{Pipes}
-\subsection{State Management}
+Das Entwurfsmuster "Dependency Injection" liefert einen Teil der Erklärung bereits mit seinem Namen: Abhängigkeiten werden "injiziert". Die Tabellenkomponente kann hier als Beispiel dienen:
+\begin{verbatim}
+class TableComponent {
+    private finder: EntryFinder;
 
-\section{Projektarchitekturen}
+    constructor(){
+        this.finder = new EntryFinderImpl();
+    }
+
+    public getFilteredData(filter: string): Entry[] {
+        let allEntries: Entry[] = this.finder.getAllEntries();
+        let filteredEntries: Entry[] = allEntries.filter(
+            entry => entry.matches(filter)
+            )
+        
+        return (filteredEntries);
+    }
+}
+
+interface EntryFinder{
+    findAll(): Entry[];
+};
+\end{verbatim}
+Das finder-Objekt liefert die benötigten Daten für unsere Tabelle. Damit muss sich die getFilteredData-Methode nicht die Beschaffung der Entry-Objekte kümmern, das liegt in der Implementation der Finder-Klasse. Mit einem Interface kann die Kapselung noch klarer gemacht werden, dennoch ist eine konkrete Implementation irgendwann notwendig (siehe Konstruktor). Abhängig von der konkreten Speicherung unserer Daten, z.B. als JSON oder SQL-Datenbank, ändert sich die konkrete Implementation. Die Komponente ist also idealerweise nur vom Interface abhängig.
+
+\subsection{Document Object Model}
+Das Document Object Model, kurz DOM, ist eine API, die den Zugriff und die Manipulation von HTML- und XML-Dokumenten erlaubt. Aus diesen Dokumenten lässt sich eine Baumstruktur ableiten:
+
+\begin{figure}
+    \centering
+    \begin{minipage}[c]{0.4\textwidth}
+        \begin{verbatim}
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                Ein Titel
+            </title>
+        </head>
+        <body>
+            <span>
+                Lorem Ipsum
+            </span>
+        </body>
+    </html>
+    \end{verbatim}
+    \end{minipage}
+    \begin{minipage}[c]{0.4\textwidth}
+        \dirtree{%
+            .1 HTML Dokument.
+            .2 DOCTYPE html.
+            .2 html.
+            .3 head.
+            .4 title.
+            .5 Text: ''Ein Titel''.
+            .3 ''\textbackslash n''.
+            .3 body.
+            .4 Text: ''Lorem Ipsum''.
+        }
+    \end{minipage}
+\end{figure}
+
+Browser verarbeiten HTML-Dokumente zu diesen Bäumen, der DOM ist folglich der aktuelle Zustand der gezeigten Seite im Browser. Dynamische Änderungen der Seite, die mittels JavaScript umgesetzt werden, sind einfache Veränderungen des DOM über die Schnittstelle (\colorbox{lightgray}{getElementById(...)}, \colorbox{lightgray}{removeChild(...)}).
+\subsubsection{Virtual DOM}
+React verwendet einen Virtual DOM als Repräsentation des aktuellen Zustandes einer Komponente. Ändern sich dargestellte Werte oder Elemente, so muss der DOM neu aufgebaut und dargestellt (gerendert) werden. Gerade bei kleineren Änderungen ist es aber nicht nötig, den gesamten DOM neu zu rendern. Der virtuelle DOM wird mit dem echten DOM abgeglichen, daraufhin werden nur die veränderten Elemente und Kindelemente neu gerendert.
+https://reactjs.org/docs/faq-internals.html
+
+\section{Angular}
+\subsection{Components and Directives}
+\subsubsection{Pipes}
+\subsection{Dependency Injection}
+Es gibt verschiedene Varianten der Dependency Injection, die von Angular verwendete Variante nennt sich Constructor Injection. Die Objekte, zu welchen eine Abhängigkeit der Komponente besteht, werden im Konstruktor übergeben. In der Regel nennt man diese Abhängigkeiten \textit{Services}, es können allerdings auch Funktionen oder Werte injiziert werden.
+
+\begin{verbatim}
+    constructor(private finderService: EntryFinderService){}
+\end{verbatim}
+
+Angular initialisiert einen \textit{Injector}, der einen Container mit Dependency-Instanzen verwaltet. Über einen Provider wird dem Injektor mitgeteilt, wie eine Instanz erzeugt wird, üblicherweise sind das die Klassen der Services. Wenn Angular eine neue Komponente erzeugt, dann wird überprüft, welche Abhängigkeiten bestehen. Gibt es Abhängigkeiten ohne bestehende Instanz, dann werden diese erzeugt und der Komponente zur Verfügung gestellt. Man erkennt, dass DI auf dem Singleton Pattern aufbaut. Damit werden Inkonsistenz und redundante Objekte vermieden.
+
+https://angular.io/guide/architecture-services
+
+\subsubsection{Services}
+
+\subsection{Change Detection}
+https://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html
+Change Detection versucht Veränderungen des Anwendungszustandes zu erkennen und die View entsprechend zu updaten. Dabei gibt es verschiedene Ansätze, die meisten Frontend Frameworks lösen das Problem auf verschiedenen Wegen. React nennt diesen Mechanismus Reconciliation, darum wird es in einem späteren Abschnitt gehen.
+
+Change Detection funktioniert in Angular automatisch. Wenn man die Anwendung als Baum \ref{fig:comp_tree} mit Komponenten als Knoten betrachtet, dann führen verschiedene Auslöser zu einer Change Detection in diesem Baum.
+
+\begin{figure}
+    \centering
+    \begin{forest}
+        changed/.style={fill=red!50, rounded corners, text=black},
+        for tree={fill=black!50, text=white, rounded corners}
+            [Comp Root
+                    [Comp A
+                            [Comp C]
+                            [Comp D]]
+                    [Comp B
+                            [Comp E
+                                    [Comp G, changed]]
+                            [Comp F]]
+            ]
+    \end{forest}
+    \caption{Komponentenbaum mit einem Veränderung in Komponente G}
+    \label{fig:comp_tree}
+\end{figure}
+
+\begin{verbatim}
+    abstract class ChangeDetectorRef {
+        abstract markForCheck(): void
+        abstract detach(): void
+        abstract detectChanges(): void
+        abstract checkNoChanges(): void
+        abstract reattach(): void
+    }
+\end{verbatim}
+
+
+https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/
+https://indepth.dev/everything-you-need-to-know-about-change-detection-in-angular/
+
+\subsection{Lifecycle}
+\subsection{State Management}
+\subsection{Routing}
+\subsection{NgModules} % unter Projektarchitektur?
+\subsection{Projektarchitektur}
+https://medium.com/@cyrilletuzi/architecture-in-angular-projects-242606567e40
+
+\section{React}
+
+\subsection{Reconciliation}
+Die Entwickler von React bezeichnen Reacts Change Detection mit Reconciliation. Eng verknüpft ist der Virtual DOM.
+\subsection{Lifecycle}
+\subsection{State Management}
+\subsection{Routing}
+\subsection{Projektarchitektur}
+https://dev.to/jack/organizing-your-react-app-into-modules-d6n

@@ -82,18 +82,27 @@ usegeometry,
 
 \input{Hilfsdateien/06Anhangsverzeichnis}
 
-% Platz für weitere Pakete %
 \usepackage[
     pdfauthor=Felix Schmeißer,
     pdfsubject=Vergleichende Analyse der komponentenbasierten Frontend-Frameworks Angular und React,
     plainpages=false
 ]{hyperref}
 
+% Platz für weitere Pakete %
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{dirtree}
+\usepackage{forest}
+
+% Sonstige Inputs
 \input{Hilfsdateien/_listings.tex}
+
+% Sonstiges
+\newcommand*{\quelle}[1]{\par\raggedleft\footnotesize Quelle:~#1}
 
 % Beginn des Dokumentes %
 \begin{document}
-\newpage 
+\newpage
 \thispagestyle{empty}
 \quad
 \addtocounter{page}{-1}
@@ -101,7 +110,7 @@ usegeometry,
 %
 \input{Hilfsdateien/01Titelseite}
 \input{Hilfsdateien/04Erklaerung}
-\input{Hilfsdateien/05Danksagung} 
+\input{Hilfsdateien/05Danksagung}
 \tableofcontents
 \addchap{Abbildungs- und Tabellenverzeichnis}
 \listoffigures
@@ -116,7 +125,7 @@ usegeometry,
 \input{Kapitel/06_Fazit}
 %
 \begin{singlespacing}
-\printbibliography
+  \printbibliography
 \end{singlespacing}
 
 \appendix
