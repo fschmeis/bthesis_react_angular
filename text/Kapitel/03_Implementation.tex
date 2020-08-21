@@ -1,10 +1,45 @@
 \chapter{Implementation}
 
+Das folgende Kapitel dokumentiert die Implementation einer Testanwendung mit den betrachteten Frameworks. Dabei werden wichtigsten Konzepte der Frameworks durch einfache Anwendungsfälle abgedeckt. Das Ziel ist eine nach Möglichkeit identische Webapplikation, um die Vorgehensweise und Probleme vergleichen zu können. Auf Drittbibilotheken- und Frameworks wird soweit wie möglich verzichtet. Die jeweiligen Material Design Frameworks bilden die Ausnahme: Viele grundlegende Komponenten wie Buttons, Tabs, Tabellen oder Toolbars werden angeboten, die einem einheitlichen Design folgen.
+
 \section{Anforderungsbeschreibung}
 
-\subsection{Aufbau}
-\subsection{Identische Teile}
-\subsection{Umsetzungsdetails}
+Die Anwendung soll Rezepte und Zutaten verwalten und erfüllt genauer die folgenden Anforderungen:
+\begin{enumerate}
+    \item Rezepte können mit Namen und Anweisungen, benötigten Zutaten und Mengen eingetragen werden
+    \item Neue Zutaten können angelegt, vorhandene Zutaten aufgestockt werden
+    \item Eine Übersicht zeigt die eingetragenen Zutaten und Mengen an
+    \item Eine Übersicht zeigt Rezepte und gibt an, ob die geforderten Zutaten in ausreichender Menge vorhanden sind
+\end{enumerate}
+
+Die Applikation verfügt über 3 mit Tabs navigierbare Ansichten für die Anforderungen 1, 3 und 4. Die Zutateneingabe erfolgt über einen Dialog. Über den Tabs liegt eine simple Headerleiste, welche den Titel der Anwendung präsentiert.
+
+\subsubsection{Rezepte hinzufügen}
+
+Der Nutzer kann im linken Bereich der Ansicht über ein Formular den Titel und die Rezeptanweisungen eingeben. Auf der rechten Seite ist ein Button, der beim Klick den Zutaten-Dialog öffnet. Die bereits hinzugefügten Zutaten werden darunter in einer Liste angezeigt. 
+
+Unter diesem Formular sind zwei Buttons angeordnet: Ein Button zum Speichern des Rezeptes, der andere zum Zurücksetzen des Formulars.
+
+\subsubsection{Zutaten}
+
+Der Nutzer sieht eine Tabelle der angelegten Zutaten mit Einheit und verfügbarer Menge. Über einen Button darüber öffnet sich der Zutaten-Dialog, dort können neue Zutaten hinzugefügt werden. Bereits vorhandene Zutaten können durch Klick auf den Tabelleneintrag aufgestockt werden. Die Tabelle lässt sich sortieren und filtern. 
+
+\subsubsection{Kochbuch}
+
+Hier werden die angelegten Rezepte seitenweise angezeigt. Links stehen Titel und Anweisungen, rechts eine Liste mit benötigten und vorhandenen Zutaten. Ist alles nötige vorhhanden, dann werden mit Klick auf den Button "Kochen" die Mengen der verbrauchten Zutaten entsprechend reduziert.
+
+Unter dem Rezept kann über Pfeile geblättert werden. Darüber ist einer Filterleiste, um nach bestimmten Rezepten zu suchen.
+
+\subsubsection{Zutaten-Dialo}
+
+Ein einfacher Dialog, der Zutatenname, Eiheit und Menge abfragt. Die Eingabe für den Namen besitzt Vorschläge, um Dopplungen durch ähnliche Schreibweisen zu verhindern ("Schoko" und "Schokolade").
+
+\subsection{Umsetzung}
+
+Die Umsetzung soll möglichst ohne Drittlösungen auskommen, um die möglichen Grenzen der Standard-Versionen aufzuzeigen. Aus den Material Design Frameworks Angular Material TODO: https://material.angular.io/ und Material UI (React) TODO: https://material-ui.com/ werden sowohl einfache Komponenten als auch Schriftarten und Themes übernommen. Letzteres besitzt deutlich mehr Komponenten, daher wird mit Angular begonnen.
+
+Die Anwendung wird in mehrere Komponenten strukturiert, die nach Möglichkeit kompakt sind, doppelten Code vermeiden und einer übersichtlichen, schnell navigierbaren Struktur folgen.
+
 \subsubsection{Verwendete Features}
 \subsubsection{Backend-Mockup}
 

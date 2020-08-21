@@ -37,7 +37,15 @@ Der letzte Major Release (10.0.0) ist vom Juni 2020. %https://de.wikipedia.org/w
 
 \subsection{React}
 
+React 
+
+TODO: https://blog.risingstack.com/the-history-of-react-js-on-a-timeline/
+
 \section{Verbreitung und Beliebtheit}
+
+Für die Betrachtung der Beliebheit und Verbreitung müssen verschiedene Faktoren bedacht werden. Entwickler stehen zu Beginn neuer Projekte vor dem Problem, die für den Anwendungsfall passenden Technologien auszuwählen. 
+
+\section{Single Page Application}
 
 \section{Verwendete Sprachen}
 In den folgenden Abschnitten werden die von Angular und React angewendeten Webtechnologien eingeführt. Grundsätzlich ist das Resultat im Browser das Gleiche: ein HTML-Dokument mit verknüpften CSS-Styles und JavaScript-Code für dynamische Funktionalitäten.
@@ -47,6 +55,7 @@ HTML gehört mit JavaScript und CSS zu den Grundsäulen von Webseiten und -anwen
 %https://de.wikipedia.org/wiki/Datei:Architecture_of_an_Angular_2_application.png
 
 \subsubsection{Angular Template Syntax}
+
 Angular führt eine spezielle Syntax ein, die den aktuellen HTML5-Standard um spezifische Funktionen erweitert. Das \colorbox{lightgray}{<script>} \textit{<script>}-Tag wird mit einer Warnung ignoriert, um Injection-Angriffe zu vermeiden. Sonst sind alle bekannten Tags des Standards erlaubt. Im folgenden Abschnitt werden einige wichtige Syntaxerweiterungen vorgestellt.
 
 Interpolation und Ausdrücke
@@ -58,7 +67,7 @@ Angular wertet die Ausdrücke, welche auch Rechenoperationen oder Funktionsaufru
 Die Ausdrücke können neben Interpolationen auch an HTML-Properties gebunden werden:
 <img [src]="imageSourceUrl">
 Grundsätzlich ist beliebiger JavaScript-Code erlaubt. Nebeneffekte sollen vermieden werden, dadurch fallen Zuweisungen (=, +=, -=, ...), einige Schlüsselwörter (a.A. new, typeof, instanceof), In- und Dekrementierung (++, --) und einige weitere Befehle ab dem ES2015-Standard weg. Auch Bitoperationen sind verboten, neu eingeführt werden der Pipe-Operator (|) zum Verwenden von Pipes und Null-Checks mit ! oder ?. Funktionen können theoretisch weiterhin Nebeneffekte verursachen. Neben der Inter
-Die Ausdrücke stehen dabei immer im Kontext der aktuellen Komponente, greifen also auf Properties der dazugehörigen TypeScript-Klasse zu. Das Data-Binding ist einseitig von Model zu View. Mehr dazu im folgenden Kapitel.
+Die Ausdrücke stehen dabei immer im Kontext der aktuellen Komponente und greifen folglich auf Properties der dazugehörigen TypeScript-Klasse zu. Das Data-Binding ist einseitig von Model zu View. Mehr dazu im folgenden Kapitel.
 
 Das Gegenstück Template Expressions sind Template Statements (Anweisungen). Das Data-Binding ist ebenfalls einseitig von View zu Model. Anweisungen werden ausgeführt, wenn das korrespondierende Event aufgerufen wird, z.B. ein Klick-Event:
 <button (click)="login()">Einloggen</button>
@@ -78,15 +87,37 @@ https://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.
 \subsubsection{JSX (React)}
 
 
+
 \subsection{JavaScript}
 JavaScript (JS) ist die Programmiersprache des Internets. Alle gängigen Browser besitzen eine Engine zum Kompilieren von JavaScript-Code, Google Chrome setzt beispielsweise auf das eigene Open-Source-Projekt V8. JS wurde ursprünglich im Jahr 1995 von Brendan Eich entwickelt. 1997 wurde AngularJS als ECMAScript (ES) normiert. In den folgenden Jahren gab 2 weitere Versionen des Standards, 2009 kamen mit der 5. Version größere Änderungen. Die nächste Version war ES6 im Jahr 2015, ab hier gab es jährlich neue Releases.
 
 %https://www.w3schools.com/js/js_versions.asp}
 
-\subsubsection{Static Type Checking}
+\subsubsection{Type Checking}
+
+JavaScript ist eine dynamisch typisierte Sprache. Typen werden zu Laufzeit bestimmt und müssen nicht angegeben werden:
+
+\begin{verbatim}
+  var sampleNumber = 123;
+
+  splitStringCharacter(sampleNumber); // -> Laufzeit-Fehler
+\end{verbatim}
+
+Damit geht die Programmierung nur vermeintlich schneller, denn Typfehler werden erst zur Laufzeit erkannt, auch wenn der Code vorher kompiliert werden konnte.
+
+Statisch typisierte Sprachen fordern die Angabe von Typen und kompilieren bei Typ-Fehlern nicht:
+
+\begin{verbatim}
+  string sampleString = 123; // -> Compiler-Fehler
+
+  number sampleNumber = 123;
+  splitStringCharacter(sampleNumber) // -> Compiler-Fehler
+\end{verbatim}
+
+Es gibt mehrere Möglichkeiten, JavaScript typsicher zu machen und Laufzeit-Fehler zu reduzieren. 
 
 \subsubsection{TypeScript}
-TypeScript (TS) ebenfalls eine Implementierung des ECMAScript-Standards und wird von Microsoft entwickelt. Es erweitert JavaScript mit zusätzlichen Features, ist also eine Obermenge. JavaScript funktioniert auch in TypeScript, nicht umgekehrt. TS wird mit seinem Compiler in gültigen JavaScript-Quelltext in einer gewünschten Zielversion ab ES3 kompiliert.
+Angular forciert die Nutzung des JavaScript-Supersets TypeScript (TS), ebenfalls eine Implementierung des ECMAScript-Standards und entwickelt von Microsoft. Es erweitert JavaScript mit zusätzlichen Features. JavaScript-Code ist valides TypeScript, nicht umgekehrt. TS wird mit seinem Compiler in gültigen JavaScript-Quelltext in einer gewünschten Zielversion ab ES3 kompiliert.
 
 Die neuen Features von TypeScript kennen Entwickler aus der objektorientierten Programmierung. TypeScript setzt, wie der Name schon andeutet, auf strengere Typisierung.
 Damit wird der Entwickler unterstützt und die Code-Qualität erhöht. Zwar gehen die Typings nach der Übersetzung verloren, allerdings werden Laufzeitfehler durch die vorgeschobene Kontrolle bereits bei der Entwicklung mit TypeScript reduziert.
@@ -95,15 +126,83 @@ https://blog.doubleslash.de/was-ist-eigentlich-typescript/
 
 https://de.wikipedia.org/wiki/TypeScript
 
-Angular wird komplett mit TypeScript geschrieben.
-
 \subsubsection{Flow}
 
-React legt sich nicht auf einen Type Checker fest. In der Dokumentation wird sowohl die Installation von TypeScript, als auch Flow beschrieben. Flow ist keine eigenständige Sprache wie TypeScript, sondern ermöglicht Type Checks durch Annotationen. Flow wird wie React von Facebook entwickelt.
+React legt sich nicht auf einen Type Checker fest. In der Dokumentation wird sowohl die Installation von TypeScript, als auch Flow beschrieben. Flow ist keine eigenständige Sprache mit Compiler wie TypeScript, sondern ermöglicht Type Checks durch Annotationen. Mit dem Befehl \textit{flow} werden markierte JavaScript-Dateien überprüft. Flow wird wie React von Facebook entwickelt.
 https://flow.org/en/docs/getting-started/
 https://reactjs.org/docs/static-type-checking.html
 
 \subsection{CSS}
+
+Cascading Style Sheets, kurz CSS, gehört neben HTML und JavaScript zu den 3 Hauptsprachen des Open Web. Mit CSS werden die mit HTML semantisch strukturierten Elemente formatiert, das Styling bleibt dadurch unabhängig von den Inhalten. CSS wird vom W3C standardisiert, Version 3 seit 2000 fortlaufend weiterentwickelt. Neue Versionen gibt es nur noch für einzelne CSS-Module, nicht für den gesamten Standard.
+TODO: https://developer.mozilla.org/de/docs/Web/CSS
+https://www.xanthir.com/b4Ko0
+
+Die Arbeitsweise mit CSS selbst ändert sich für React und Angular im Gegesatz zu HTML und JavaScript nicht. Entwickler können frei unter verschiedene Präpozessoren oder anderen Lösungen entscheiden. Allerdings ändert sich die Verwendung innerhalb der HTML-Templates.
+
+In React werden Klassen mit dem className-Attribut zugewiesen: 
+\begin{verbatim}
+render() {
+  return <span className="headline-big highlighted">Headline</span>
+}
+\end{verbatim}
+
+Durch JSX ergibt sich die Möglichkeit, Styles dynamisch hinzuzufügen: 
+
+\begin{verbatim}
+render() {
+  let className = 'button-save';
+  if (this.props.isForwardable) {
+    className += 'button-highlighted';
+  }
+  return <button className={className}>Activate</button>
+}
+\end{verbatim}
+
+Das style-Attribut ist erlaubt, allerdings sollten solche Inline-Styles vermieden und eigene Stylesheets verwendet werden (TODO % https://reactjs.org/docs/dom-elements.html#style).
+
+TODO https://reactjs.org/docs/faq-styling.html
+
+Angular erlaubt weiterhin die Nutzung von class für HTML-Elemente. Mit Class-Binding können Strings, String-Arrays oder Objekte angegeben werden. Das Objekt ist eine Liste aus Key-Value Paaren mit einem String aus CSS-Klassen und einem Boolean, der angibt, ob die Klassen aktiv sind oder nicht.
+
+\begin{verbatim}
+  <some-element class="first second">...</some-element>
+
+  <some-element [class]="'first second'">...</some-element>
+
+  <some-element [class]="['first', 'second']">...</some-element>
+
+  <some-element [class]="{'first': true, 'second third': false}">...</some-element>
+\end{verbatim}
+
+Class-Binding kann sich auch auf einzelne Klassen beziehen: 
+
+\begin{verbatim}
+  [class.menu-active]="isMenuActive"
+\end{verbatim}
+
+Inline-Styles sind auch in Angular erlaubt und mit dem Style-Binding gibt es erweiterte Möglichkeiten. Man kann direkt auf CSS-Attribute zugreifen: 
+
+\begin{verbatim}
+  [style.width]="100px" 
+  [style.width.px]="100" 
+  [style]="styleExpr"
+
+  styleExpr -> "width: 100px; height: 100px" 
+  oder -> {width: '100px', height: '100px'}
+  oder -> ['width', '100px']
+\end{verbatim}
+
+Allerdings ist auch hier von der Nutzung von Inline-CSS abzuraten. Externe Stylesheets sind leichter zu pflegen, eine Vermischung mit Inline-Styles erschwert die Fehlersuche und bricht die Trennung von View-Content und Design.
+
+% TODO https://angular.io/guide/attribute-binding#class-binding
+https://angular.io/api/common/NgClass
+
+\subsubsection{Sass}
+Sass vereinfacht CSS und fügt Funktionalitäten hinzu, die die Les- und Wartbarkeit der Style Sheets verbessern, beispielsweise mit Mixins: CSS-Blöcke können als Variablen definiert und an anderen Stellen verwendet werden. Man bezeichnet Sass als Präpozessor, weil ein Compiler die erweiterte Syntax zu nativem CSS verarbeitet. Neben Sass gibt es noch weitere Präpozessoren wie LESS, Stylus oder PostCSS. 
+
+%TODO  https://developer.mozilla.org/de/docs/Glossary/CSS_Praeprozessor
+
 
 \section{Projekterstellung}
 \subsection{Vorgehensweise}

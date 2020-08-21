@@ -8,7 +8,8 @@ Die angeschnittenen Punkte decken nicht das gesamte Spektrum der verwendeten Tec
 
 Components sind in der Terminologie nicht eineindeutig. Martin Fowler beschreibt seine Einordnung wie folgt: ''I use component to mean a glob of software that's intended to be used, without change, by an application that is out of the control of the writers of the component. By 'without change' I mean that the using application doesn't change the source code of the components, although they may alter the component's behavior by extending it in ways allowed by the component writers.''
 (https://martinfowler.com/articles/injection.html\#ComponentsAndServices)
-Mit diesem Ansatz kann man Komponenten in Angular ebenfalls betrachten. Eine Komponente ist in sich abgeschlossen und sollte von außen nicht verändert werden. Das Verhalten lässt sich allerdings ändern: Eine Beispielkomponente bietet eine Tabelle zum Anzeigen von Daten. Von außen lässt sich die Komponente bezüglich der Spalten, Zeilen, Styles und Inhalten in einem definierten Rahmen beeinflussen.
+Mit diesem Ansatz kann man Komponenten in Angular ebenfalls betrachten. Eine Komponente ist in sich abgeschlossen und sollte von außen nicht verändert werden. Das Verhalten lässt sich allerdings ändern: Eine Beispielkomponente bietet eine Tabelle zum Anzeigen von Daten. Von außen lässt sich die Komponente bezüglich der Spalten, Zeilen, Styles und Inhalten in einem definierten Rahmen beeinflussen. Mit Komponenten lassen sich wiederverwendbare Funktionalitäten mit erleichterter Wartbarkeit realisieren.
+
 \subsection{Dependency Injection}
 Das Entwurfsmuster "Dependency Injection" liefert einen Teil der Erklärung bereits mit seinem Namen: Abhängigkeiten werden "injiziert". Die Tabellenkomponente kann hier als Beispiel dienen:
 \begin{verbatim}
