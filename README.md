@@ -1,4 +1,4 @@
-# Exposé zur Bachelorthesis
+# Bachelorthesis
 
 ## Vergleichende Analyse der komponentenbasierten Frontend-Frameworks Angular und React
 
