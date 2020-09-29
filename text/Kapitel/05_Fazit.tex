@@ -1,0 +1,24 @@
+\chapter{Fazit}
+Angular und React sind zwei Technologien, mit deren Hilfe dynamische Webanwendungen entwickelt werden können. Die einzelnen Bestandteile des Frontends werden in wiederverwendbare Komponenten aufgeteilt. Beide erweitern klassisches HTML mit einem Templating-Ansatz, um eine stärkere Bindung mit JavaScript zu erreichen. Dadurch ist direkte DOM-Manipulation mit jQuery oder JavaScript selbst nicht mehr notwendig.
+
+React bietet als für das Rendern von Komponenten optimierte Bibliothek nicht viel mehr als die genannten Punkte. Für komplexere Anwendung ist man auf Drittlösungen angewiesen. Das erhöht den Wartungsaufwand. Mit React können aber in kurzer Zeit dynamische Websites oder Webanwendungen gebaut werden.
+
+Angular macht dem Entwickler mehr Vorgaben, es finden sich für gängige Problemstellungen immer mitgelieferte Lösungen. Diese sind allerdings immer enthalten, unabhängig davon, ob sie auch benötigt werden. Angular erfordert deutlich mehr Boilerplate, allerdings wird im Gegensatz zu React eine gute Basis auch für komplexere Anwendungen geboten. Das Angular CLI unterstützt die Generierung neuer Komponenten.
+
+Diese Arbeit hat die Kernelemente der Frameworks durch eine tiefere Vorbetrachtung und Implementation vorgestellt und angewandt. Daraus wurde abgeleitet, für welche Art von Anwendung Angular und React geeignet sind. Es wurden mögliche Schwierigkeiten dargestellt, die mit Verwendung der Frameworks einher gehen.
+
+\section{Probleme}
+Die Wahl, Material-UI als Design-Bibliothek zu verwenden, war in der Nachbetrachtung eine schlechte Entscheidung. Die gelieferten Komponenten haben sich doch stark unterschieden. Eine bessere Entscheidung wäre ein Framework mit Komponenten gewesen, die nur aus HTML und CSS bestehen, wie beispielsweise Bootstrap. Diese hätten dann ohne Änderungen verwendet werden können und die Implementationsdetails der Frameworks hätten noch besser hervorgehoben werden können.
+
+Der Umstand, das dieses Thema sehr aktuelle Technologien behandelt, wirkt sich auch auf die Literatur aus. Abseits von Handbüchern, die mit einem Update veraltet sein können, gibt es kaum Fachliteratur. Die wichtigste Quelle war daher die Dokumentation der Frameworks. Ansonsten finden sich unzählige Artikel oder Videomaterial im Netz, die Qualität variiert dabei stark. 
+
+Ein weiteres Problem war meine Einstellung zu Beginn der Implementation, den optimalen Weg zu finden und nach Best Practice zu arbeiten. Es gibt keinen allerdings nicht den einzig richtigen Best Practice, man findet immer wieder neue Lösungsansätze und Ansichten, die sich häufig auch widersprechen. Wichtig ist, Best Practices zu hinterfragen, um sie zu verstehen und auszuwählen, ob sie das vorliegende Problem lösen.
+
+\section{Erfahrungen und Lernerfolge}
+Mit Angular arbeite ich bereits aktiv seit einem Jahr, allerdings hatte ich hier die Möglichkeit Konzepte, die mir vorher nur oberflächlich bekannt waren, genauer zu betrachten und die Funktionsweise zu verstehen. Das betrifft insbesondere die Dependency Injection und Change Detection. Die Entwicklung mit Angular fällt mir dadurch leichter, auch weil ich Fehler schneller zuordnen kann.
+
+Mit React hatte ich vor Beginn der Arbeit noch keine praktische Erfahrung, jetzt habe ich einen sehr guten Überblick über die Möglichkeiten, aber vor allem über die Grenzen der Bibliothek. In kleinen Projekten werde ich React zukünftig definitiv anwenden. Bei größeren Applikationen fällt meine Entscheidung vorerst auf Angular, da ich mit der klareren Trennung zwischen Template und Klassen strukturierter und besser arbeiten kann. 
+
+Ich habe gelernt, wie wichtig Architekturentscheidungen in Bezug auf Webapplikationen sind und das ein Verständnis der internen Abläufe des Frameworks und der Designphilosophie der Framework-Entwickler notwendig ist. Gleichzeitig muss man die Projektanforderungen richtig analysieren und eine Architektur ableiten, die eine umständliche Problemlösung darstellt. Für React stellt sich beispielsweise die Frage, ob eine State-Management Bibliothek wie Redux wirklich notwendig ist.
+
+\newpage

@@ -8,7 +8,7 @@ Es gibt unzählige JavaScript-Frameworks und es kommen ständig neue hinzu. Mark
 
 ### Forschungsstand/Aktuelle Situation
 
-Angular ist ein umfangreiches Frontend-Framework und kann damit nahezu jede Aufgabe in diesem Bereich abdecken. Für sehr viele Problemstellungen gibt es eine Lösung direkt aus dem Framework. Die vorgesehene Archtitektur ist MVC bzw. MVVM und forciert damit eine strikte Trennung, die Entwicklung in großen Teams vereinfacht.
+Angular ist ein umfangreiches Frontend-Framework und kann damit nahezu jede Aufgabe in diesem Bereich abdecken. Für sehr viele Problemstellungen gibt es eine Lösung direkt aus dem Framework. Die vorgesehene Archtitektur ist MVC respektive MVVM und forciert damit eine strikte Trennung, die Entwicklung in großen Teams vereinfacht.
 
 React als JavaScript-Bibilothek ist deutlich reduzierter. Abseits der elementaren Funktion von React werden Community-Erweiterungen verwendet. Demzufolge muss man hier zwischen verschiedenen Lösungsmöglichkeiten abwägen. React verwendet mit JSX eine JavaScript-Erweiterung, welche HTML und JavaScript kombiniert. Das macht die Entwicklung von Komponenten deutlich schneller, bricht allerdings mit MV*-Architekturen.
 

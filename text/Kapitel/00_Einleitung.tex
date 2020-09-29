@@ -1,50 +1,24 @@
 \chapter{Einleitung}
+\subsubsection{Problemstellung}
+Es gibt unzählige JavaScript-Frameworks und es kommen ständig neue hinzu. Als Entwickler muss abgewägt werden, welche Lösung für das speziell vorliegende Szenario geeignet ist.
 
-\section{Problemstellung}
-Es gibt unzählige JavaScript-Frameworks und es kommen ständig neue hinzu. Als Entwickler muss man abwägen,
-welche Lösung für das speziell vorliegende Szenario geeignet ist.
+Angular ist ein umfangreiches Frontend-Framework und kann damit nahezu jede Aufgabe in diesem Bereich abdecken. Für sehr viele Problemstellungen gibt es eine Lösung direkt aus dem Framework. 
 
-Angular ist ein umfangreiches Frontend-Framework und kann damit nahezu
-jede Aufgabe in diesem Bereich abdecken. Für sehr viele Problemstellungen
-gibt es eine Lösung direkt aus dem Framework. Die vorgesehene Archtitektur ist
-MVC bzw. MVVM und forciert damit eine strikte Trennung, die Entwicklung in großen Teams vereinfacht.
+React als JavaScript-Bibliothek ist deutlich reduzierter. Abseits der elementaren Funktion von React werden externe Bibliotheken oder Frameworks verwendet. Demzufolge muss hier zwischen verschiedenen Möglichkeiten entschieden werden.
 
-React als JavaScript-Bibilothek ist deutlich reduzierter. Abseits der elementaren Funktion von React
-werden Community-Erweiterungen verwendet. Demzufolge muss man hier zwischen verschiedenen
-Lösungsmöglichkeiten abwägen. React verwendet mit JSX eine JavaScript-Erweiterung,
-welche HTML und JavaScript kombiniert. Das macht die Entwicklung von Komponenten deutlich schneller,
-bricht allerdings mit MV*-Architekturen.
+\subsubsection{Ziel der Arbeit}
+Das Ziel der Arbeit ist, die Technologien umfassend einzuführen und daraus Gemeinsamkeiten und Unterschiede zu erkennen. Auch werden mögliche Vor- und Nachteile hinsichtlich der Architektur angeschnitten. Dazu wird im Rahmen der Arbeit eine Testanwendung mit beiden Frameworks implementiert. Das Ziel ist, die geeigneten Anwendungsszenarien der Technologien daraus abzuleiten.
 
-\section{Ziel der Arbeit}
-Das Ziel der Arbeit ist, Gemeinsamkeiten und Unterschiede zwischen den Technologien herauszuarbeiten,
-auch mögliche Vor- und Nachteile hinsichtlich der Architektur werden angeschnitten.
-Dazu wird im Rahmen der Arbeit eine Testanwendung mit den Frameworks implementiert.
-Durch Steuerung der Datenmenge und künstliche Geschwindigkeitsdrosselung können verschiedene
-Szenarien simuliert werden, um die Anwendungsbereiche der Frameworks einzugrenzen.
+\subsubsection{Vorgehensweise}
+Zunächst erfolgt eine allgemeine Einführung mit der Entstehungsgeschichte, zugrundeliegenden Technologien und dem Aufbau neuer Projekte. Im Anschluss werden die Konzepte von Angular und React beschrieben. Danach wird der Vergleich praktisch durchgeführt. Ziel ist es, eine identische Anwendung sowohl in Angular
+als auch in React zu implementieren, um die Unterschiede zu verdeutlichen und Grenzen aufzuzeigen. Abschließend werden die Beobachtungen eingeordnet und Schlüsse über Vor- und Nachteile beider Technologien gezogen.
 
-Welche Gemeinsamkeiten und Unterschiede besitzen Angular und React und welche Anwendungsbereiche
-ergeben sich aus der Performance in unterschiedlichen Auslastungsszenarien?
+\subsubsection{Abgrenzung}
+Die Arbeit gibt eine fundierte Übersicht über die Grundprinzipien von Angular und React. Eine komplette Abhandlung ist nicht möglich und für die Beantwortung der zentralen Fragestellung auch nicht notwendig.
 
-\section{Vorgehensweise}
+\subsubsection{Bibliothek und Framework}
+Ein Framework gibt einen Rahmen für die Entwicklung vor und bestimmt die Architektur der Anwendung. Einige Frameworks liefern außerdem fertige Komponenten und Klassen, sondern auch Laufzeitumgebungen und Interfaces zum Erstellen neuer Bestandteile, Testsysteme und Auslieferung der Anwendung als Produktionsversion.
 
-Zunächst ein theoretischer Vergleich beider Technologien, der die grundlegenden Features beschreibt und gegenüberstellt.
-Im zweiten Schritt wird der Vergleich praktisch durchgeführt. Ziel ist es, eine identische Anwendung einmal in Angular
-und React zu implementieren, um die Unterschiede zu verdeutlichen und Grenzen aufzuzeigen. Im Anschluss werden verschiedene
-Testszenarien ausgewertet, um Anforderungen kleiner Anwendungen und größerer Enterprise-Produkte zu vergleichen.
-Abschließend werden die Beobachtungen eingeordnet und Schlüsse über Vor- und Nachteile beider Technologien gezogen.
-Zudem werden kurz Lösungsmöglichkeiten für etwaige Probleme diskutiert, damit einher geht ein Ausblick über
-die Erweiterbarkeit und Einbindung von externen Lösungen.
+Eine Bibliothek ist eine Sammlung von einzelnen Programmteilen wie Klassen oder Komponenten, Routinen oder ganzen Programmen, die für die Entwicklung genutzt werden können und die Arbeit unterstützen. Im Gegensatz zu Frameworks definieren Sie nicht den Rahmen der Anwendung, sondern sind eigenständige Bausteine.
 
-\section{Inhaltlicher Aufbau der Arbeit}
-
-\section{Abgrenzung}
-
-Diese Arbeit geht auf die essentiellen Funktionalitäten beider Frameworks ein und stellt die entsprechende Umsetzung im jeweils
-anderen vor. Fortgeschrittene Themen und Erweiterungen werden nicht genauer betrachtet, werden aber mit Verweis auf offizielle Quellen
-in die Argumentation eingebunden.
-
-Die Arbeit hat nicht den Anspruch, die teils kontroverse und nicht eindeutige Terminologie aufzuarbeiten. An dieser Stelle dient das Entwurfsmuster Model-View-Controller (MVC) als Beispiel. In der Literatur finden sich durchaus verschiedene Ansichten, ab wann eine gewählte Architektur dieses Entwurfsmuster erfüllt. Die Arbeit liefert für solche Begriffe eine begründete Einordnung, ohne den Anspruch zu haben, sämtliche Möglichkeiten abzubilden.
-
-\section{Begriffe}
-\subsubsection{Frameworks}
-\subsubsection{MVC}
+Angular ist ein Webframework, React eine Bibliothek. Im Folgenden werden beide Technologien zur Vereinfachung als Framework zusammengefasst.

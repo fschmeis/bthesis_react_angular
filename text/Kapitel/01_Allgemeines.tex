@@ -3,216 +3,201 @@
 \section{Entstehung}
 
 \subsection{Angular}
-\subsubsection{Anfänge als Nebenprojekt}
-Die Historie von Angular beginnt 2009 als Nebenprojekt der Entwickler Miško Hevery und Adam Abrons. Ihn störte die aufwändige Entwicklung durch sehr viel Boilerplate-Code, u.a. Entwicklung einer Datenbank, Datenbankzugriff und Sicherheitsvorkehrungen.
-Die ursprüngliche Idee bestand also darin, diese Bestandteile zu abstrahieren und ein Framework zu entwickeln, welches von Designern ohne Programmierkenntnisse verwendet werden konnte. Anwendungen sollten unter dieser Prämisse mittels HTML umgesetzt werden können.
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.8]{Grafiken/getangular.png}
-    \quelle{Screenshot von: web.archive.org/web/20100227143939/}
-    \caption{www.getangular.com}
-    \label{fig:getangular}
-\end{figure}
+Die Historie von Angular beginnt 2009 als Nebenprojekt der Entwickler Miško Hevery und Adam Abrons. Hevery störte die notwendige Menge an Boilerplate für Datenbanken, Datenbankzugriff und Sicherheitsvorkehrungen. Die Idee war, diese Bestandteile zu abstrahieren und ein Framework zu entwickeln, dass von Designern ohne fortgeschrittene Programmierkenntnisse verwendet werden kann. 
 
 \subsubsection{AngularJS}
-Hevery arbeitete zu dieser Zeit bei Google mit 2 weiteren Entwicklern an Google Feedback, die Umsetzung wurde mit einem eigenen Java Web Toolkit durchgeführt. In 6 Monaten entstanden 17.000 LOC, der immer schwerer zu warten und testen war. Daraufhin bat Hevery seinen Produktmanager um 2 Wochen Zeit, um das gesamte Projekt mit dem eigenen Framework neu zu entwickeln. Das gelang ihm in 3 Wochen, dabei konnte er den Code um 90\% auf 1.500 LOC reduzieren. Google begann sich für Angular zu interessieren und stellte ein Entwicklerteam. Zunehmend wurden auch interne Projekte mit dem neu benannten AngularJS umgesetzt.\cite{yt_ngConf2014} angularjs: https://angularjs.org/
+Hevery arbeitete zu dieser Zeit bei Google mit 2 weiteren Entwicklern an Google Feedback. Die Entwicklung wurde immer schwerfälliger, woraufhin er das Projekt mit dem eigenen Framework in 3 Wochen neu schrieb und den Quelltext um 90\% reduzieren konnte. Google begann, immer mehr interne Projekte mit dem in AngularJS benannten Framework umzusetzen.
 
-Im Oktober 2010 wurde AngularJS mit der Versionsnummer 0.9.0 als erste stabile Version auf GitHub veröffentlicht. Bis zur Veröffentlichung der Version 1.0.0 im Juni 2012 war das Framework bereits auf breite Resonanz gestoßen. Das hat verschiedene Gründe, die sich im Ursprung auf die Überlegungen von Hevery und Abrons stützen. Am wichtigsten sind die folgenden Punkte, die AngularJS als erstes clientseitiges Webframework umsetzen konnte:
+Im Oktober 2010 wurde AngularJS mit der Versionsnummer 0.9.0 als erste stabile Version auf GitHub veröffentlicht, im Juni 2012 Version 1.0.0. Das Framework war durch innovative Ansätze von Beginn an erfolgreich, dazu gehören:
 \begin{itemize}
-    \item Dependency Injection sorgt für lose Kopplung und vereinfacht damit Softwaretests
-    \item Directives erlauben das Erstellen wiederverwendbarer HTML-Bausteine
-    \item Zweiseitiges Data-Binding hält Model und View konsistent
-    \item Das Nachladen im Browser wird hinfällig (Single-Page-Application)
+  \item Dependency Injection
+  \item wiederverwendbare HTML-Bausteine
+  \item zweiseitige Datenbindung (hält Model und View konsistent)
+  \item Single-Page-Applikation (einzelnes HTML-Dokument lädt Inhalte dynamisch)
 \end{itemize}
-https://www.ryadel.com/en/angular-angularjs-history-through-years-2009-2019/
 
-Die Version 1.7.0 im Mai 2018 führte als letzter Release zu vorherigen Versionen inkompatible Änderungen ein. \cite{yt_ngConf2014} Bis Juli 2021 wird AngularJS im Long Time Support unterstützt. Es werden lediglich Sicherheitsfehler und durch neue Versionen der gängigen Browser erzwungene Bugs behoben.
-
-https://de.wikipedia.org/wiki/AngularJS
+Die Version 1.7.0 im Mai 2018 führte als letzter Release zu vorherigen Versionen inkompatible Änderungen ein. Bis Juli 2021 wird AngularJS im Long Time Support unterstützt. Es werden lediglich Sicherheitsfehler und durch neue Versionen der gängigen Browser erzwungene Bugs behoben.\cite{NgJsHistory}\cite{NgConf2014}
 
 \subsubsection{Angular 2}
-2016 veröffentlichte Google den Nachfolger von AngularJS (Angular 2.0) und beschränkte die Bezeichnung auf Angular, da die neue Version als komplett neue Entwicklung nicht kompatibel zu vorhergehenden Releases war. Neu war vor allem der Wechsel zu TypeScript, einem Superset von JavaScript basierend auf ECMAScript6. Des Weiteren verschob sich der Fokus voll auf moderne Browser, um Workarounds zur Unterstützung veralteter Browser zu reduzieren. Viele Konzepte, mit denen AngularJS bereits Vorreiter im Bereich der Webframeworks war, wurden mit Angular weiter verbessert. Templates wurden weiter vereinfacht, u.A. wurden Bindings für Eigenschaften und Events deutlicher syntaktisch getrennt. Weiter wird Kapselung in Modulen und dynamisches Nachladen von Komponenten ermöglicht.
-
-Der letzte Major Release (10.0.0) ist vom Juni 2020. %https://de.wikipedia.org/wiki/Angular
+2016 veröffentlichte Google den Nachfolger von AngularJS unter dem verkürzten Namen Angular, von Grund auf neu geschrieben und nicht abwärtskompatibel. Die neue Version beinhaltet die JavaScript-Obermenge TypeScript und verzichtet auf den Support älterer Browser. Die Template Syntax ist weiter verbessert worden, die Kapselung in Modulen und dynamisches Nachladen von Komponenten kommt hinzu. \cite{AngularWiki}
 
 \subsection{React}
-
-React 
-
-TODO: https://blog.risingstack.com/the-history-of-react-js-on-a-timeline/
-
-\section{Verbreitung und Beliebtheit}
-
-Für die Betrachtung der Beliebheit und Verbreitung müssen verschiedene Faktoren bedacht werden. Entwickler stehen zu Beginn neuer Projekte vor dem Problem, die für den Anwendungsfall passenden Technologien auszuwählen. 
-
-\section{Single Page Application}
+Die Entstehungsgeschichte von React ähnelt der von Angular. In 2011 standen Entwickler der Facebook Ads App vor einigen Problemen. Neue Features ließen sich mit der existierenden Codebase immer schwieriger umsetzen und eine grundlegende Überarbeitung war notwendig, um weiter entwickeln zu können. Aus diesem Umstand heraus entwickelte Jordan Walke einen ersten Prototypen namens FaxJs\footnote{siehe: https://github.com/jordwalke/FaxJs}. Dieser wurde in der folgenden Zeit auch eingesetzt und mit dem Namen React weiterentwickelt. Mit der Übernahme von Instagram durch Facebook gab es Gründe für eine Open-Source-Veröffentlichung der Bibliothek. Ende Mai 2013 stellte Walke React im Rahmen der JS ConfUS der Öffentlichkeit vor. In den folgenden Jahren verbreitete sich React weiter. Anfang 2015 begannen große Unternehmen wie Netflix und Airbnb ihre Anwendung mit dem Framework umzusetzen.\cite{ReactTimeline}
 
 \section{Verwendete Sprachen}
-In den folgenden Abschnitten werden die von Angular und React angewendeten Webtechnologien eingeführt. Grundsätzlich ist das Resultat im Browser das Gleiche: ein HTML-Dokument mit verknüpften CSS-Styles und JavaScript-Code für dynamische Funktionalitäten.
+In den folgenden Abschnitten werden die von Angular und React angewendeten Webtechnologien eingeführt. Die Angular Template Syntax und JSX sind spezifisch für Angular respektive React entwickelte Syntaxerweiterungen für HTML und JavaScript.
 
-\subsection{HTML-Templates}
-HTML gehört mit JavaScript und CSS zu den Grundsäulen von Webseiten und -anwendungen. Die \textbf{H}yper\textbf{t}ext \textbf{M}arkup \textbf{L}anguage gibt den Inhalten eine semantische Struktur und enthält Metainformationen. Grafische Darstellung und dynamische Änderungen werden mit CSS und JavaScript durchgeführt.
-%https://de.wikipedia.org/wiki/Datei:Architecture_of_an_Angular_2_application.png
+\subsection{Angular Template Syntax}
+Angular führt eine spezielle Syntax ein, die den aktuellen HTML5-Standard um einige Funktionen erweitert. Das \inlinecode{script}-Tag wird mit einer Warnung ignoriert, um Injection-Angriffe zu vermeiden. Sonst sind alle bekannten Tags des Standards erlaubt. Im folgenden Abschnitt werden einige wichtige Syntaxerweiterungen vorgestellt.
 
-\subsubsection{Angular Template Syntax}
+\subsubsection{Interpolation und Ausdrücke}
 
-Angular führt eine spezielle Syntax ein, die den aktuellen HTML5-Standard um spezifische Funktionen erweitert. Das \colorbox{lightgray}{<script>} \textit{<script>}-Tag wird mit einer Warnung ignoriert, um Injection-Angriffe zu vermeiden. Sonst sind alle bekannten Tags des Standards erlaubt. Im folgenden Abschnitt werden einige wichtige Syntaxerweiterungen vorgestellt.
+Mit Interpolation lassen sich Template Expressions (Ausdrücke) im HTML-Template verwenden. Angular wertet die Ausdrücke aus und ersetzt sie im finalen Template durch einen String. Rechenoperationen oder Funktionsaufrufe sind erlaubt, das Ergebnis muss aber als String ausgewertet werden können.
 
-Interpolation und Ausdrücke
-
-Mit Interpolation lassen sich Template Expressions (Ausdrücke) in der HTML-Template verwenden:
+\begin{listing}
+\begin{minted}{html+ng2}
 <h1>Benutzername: {{ userName }}</h1>
-Angular wertet die Ausdrücke, welche auch Rechenoperationen oder Funktionsaufrufe beinhalten können aus und ersetzt sie in der finalen Template durch einen String. Die Ausdrücke müssen sich also in Strings umwandeln lassen. Damit sind auch folgende Konstrukte erlaubt:
-<span>11 + {{getRandomNumber()}} = {{11 + getRandomNumber()}}.</span>
-Die Ausdrücke können neben Interpolationen auch an HTML-Properties gebunden werden:
-<img [src]="imageSourceUrl">
-Grundsätzlich ist beliebiger JavaScript-Code erlaubt. Nebeneffekte sollen vermieden werden, dadurch fallen Zuweisungen (=, +=, -=, ...), einige Schlüsselwörter (a.A. new, typeof, instanceof), In- und Dekrementierung (++, --) und einige weitere Befehle ab dem ES2015-Standard weg. Auch Bitoperationen sind verboten, neu eingeführt werden der Pipe-Operator (|) zum Verwenden von Pipes und Null-Checks mit ! oder ?. Funktionen können theoretisch weiterhin Nebeneffekte verursachen. Neben der Inter
-Die Ausdrücke stehen dabei immer im Kontext der aktuellen Komponente und greifen folglich auf Properties der dazugehörigen TypeScript-Klasse zu. Das Data-Binding ist einseitig von Model zu View. Mehr dazu im folgenden Kapitel.
+<!-- mit userName = 'Max' ... -->
+<h1>Benutzername: Max</h1>
 
-Das Gegenstück Template Expressions sind Template Statements (Anweisungen). Das Data-Binding ist ebenfalls einseitig von View zu Model. Anweisungen werden ausgeführt, wenn das korrespondierende Event aufgerufen wird, z.B. ein Klick-Event:
-<button (click)="login()">Einloggen</button>
-Anweisungen erlauben wie Ausdrücke beliebiges JavaScript, allerdings sind Nebeneffekte in diesem Fall der zentrale Punkt, um entsprechende Datenänderungen oder Navigation anzustoßen. Nicht erlaubt ist das Keyword new, In- und Dekrementierung, operative Zuweisungen (+=, -=), Bitoperationen und der Pipe-Operator.
-Der Kontext erstreckt sich ebenfalls auf die zugrunde liegende Komponente, erweitert um den Kontext der Template selbst. Anweisungen können folglich auch auf \textit{\$event}-Objekte und Template Variablen zugreifen. Mehr dazu gleich unter Built-in directives.
+<span>Zufallszahl: {{ getRandomNumber() }}</span>
+<!-- mit getRandomNumber -> 23 -->
+<span>Zufallszahl: 23</span>
+\end{minted}
+\end{listing}
 
-Banana in a Box
-Die letzte Möglichkeit zum Data-Binding ist zweiseitig. Wird also die View verändert, etwa durch Eingabeevents, dann wird das Model geupdated. Anders herum funktioniert das genauso. Ausdrücke werden dazu in zwei Klammern geschrieben:
-<input [(ngModel)]="username">
-Diese Schreibweise ist nur syntaktischer Zucker und ist mit folgender Schreibweise gleichzusetzen:
-<input [ngModel]="username" (ngModelChange)="username = \$event">
-<input [value]="username" (input)="username = \$event.target.value">
-Damit werden die oben beschriebenen Bindings verwendet.
-https://angular.io/guide/template-syntax
-https://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html
+Die Ausdrücke können neben Interpolationen auch an HTML-Attribute gebunden werden: \mintinline[breaklines]{html+ng2}{<img [src]="imageSourceUrl">}.
 
-\subsubsection{JSX (React)}
+Grundsätzlich ist beliebiger JavaScript-Code erlaubt. Nebeneffekte sollen vermieden werden, dadurch fallen Zuweisungen (\inlinecode{=}, \inlinecode{+=}, \inlinecode{-=,}), einige Schlüsselwörter (\inlinecode{new}, \inlinecode{typeof}, \inlinecode{instanceof}), In- und Dekrementierung (\inlinecode{++}, \inlinecode{-{}-}) und einige weitere Befehle ab dem ES2015-Standard weg. Auch Bitoperationen sind verboten, neu eingeführt werden der Pipe-Operator (\inlinecode{|}) zum Verwenden von Pipes (mehr dazu unter \ref{ssec:pipes}) und Null-Überprüfungen mit \inlinecode{!} oder \inlinecode{?}.
 
+Funktionen können weiterhin Nebeneffekte verursachen. Die Ausdrücke stehen dabei immer im Kontext der aktuellen Komponente und greifen folglich auf Eigenschaften der verknüpften TypeScript-Klasse zu. Die Datenbindung ist einseitig von Model zu View. Mehr dazu in Kapitel 2.
 
+\subsubsection{Anweisungen}
+Das Gegenstück Template Expressions sind Template Statements (Anweisungen). Die Datenbindung verhält sich identisch. Anweisungen werden ausgeführt, wenn das korrespondierende Event aufgerufen wird, z.B. ein Klick-Event: 
+
+\mintinline{html+ng2}{<button (click)="login()">Einloggen</button>}
+
+Anweisungen erlauben, wie Ausdrücke, beliebiges JavaScript. Allerdings sind Nebeneffekte in diesem Fall der zentrale Punkt, um entsprechende Datenänderungen oder Navigation anzustoßen. Zuweisungen (operative wie \inlinecode{+=} oder \inlinecode{-=} ausgenommen) und Schlüsselwörter außer \inlinecode{new} sind erlaubt.
+Der Kontext wird um den Kontext des Templates selbst erweitert. Anweisungen können folglich auch auf \inlinecode{\$event}-Objekte und im Template definierte Variablen zugreifen. Im folgenden Beispiel wird der Variable \inlinecode{adress} eine Referenz auf ein Input-Element zugewiesen: 
+
+\mintinline{html+ng2}{<input #address placeholder="Adresse" />}
+
+\subsubsection{Banana In A Box}
+Datenbindung in Angular kann auch zweiseitig stattfinden: Wird die View verändert, etwa durch Eingabeevents, dann wird das Model aktualisiert. Das gilt umgekehrt für Änderungen des Models. Ausdrücke werden dazu in eckige und runde Klammern geschrieben, daher die Bezeichnung \glqq Banana In A Box\grqq. 
+
+\mintinline{html+ng2}{<input [(ngModel)]="username">}.
+
+\subsection{JSX}
+JSX ist eine Syntaxerweiterung für JavaScript und ermöglicht die Verwendung von HTML innerhalb von JavaScript. Die HTML-Elemente werden am Ende zu vollständigem JavaScript kompiliert (Listing \ref{lst:listing1}).
+
+\begin{listing}
+\caption{Äquivalente Syntax in JSX}
+\label{lst:listing1}
+\begin{minted}{jsx}
+const element = (
+  <h1 className="hello">
+    Hallo Welt!
+  </h1>
+);
+
+const element = React.createElement(
+  'h1',
+  {className: 'hello'},
+  'Hallo Welt!'
+);
+\end{minted}
+\end{listing}
+
+JSX wertet wie Angulars Template Syntax Ausdrücke aus, allerdings wird nur eine geschweifte Klammer um den Ausdruck gesetzt: \inlinecode{<h1>Hallo { user.name }!</h1>}. String-Literale können auch in Anführungszechen gesetzt werden. Der volle Funktionsumfang von JavaScript bleibt erhalten, somit können \inlinecode{if}-Statements und \inlinecode{for}-Schleifen verwendet werden (Listing \ref{lst:listing2})
+
+\begin{listing}
+\caption{HTML-Templates mit JavaScript}
+\label{lst:listing2}
+\begin{minted}{jsx}
+  function greet(user) {
+  if (user) {
+    return <h1>Hallo {user.name}!</h1>;
+  }
+  return <h1>Hallo Gast!</h1>;
+}
+\end{minted}
+\end{listing}
+
+Möglicherweise schädliche Inhalte wie Nutzereingaben können problemlos in JSX eingebettet werden. Vor dem Rendern im React DOM werden die Ausdrücke in Strings konvertiert und spezielle Character umgewandelt (z.B. \& zu \&amp). Das verhindert XSS-Angriffe (Cross-site scripting).
 
 \subsection{JavaScript}
-JavaScript (JS) ist die Programmiersprache des Internets. Alle gängigen Browser besitzen eine Engine zum Kompilieren von JavaScript-Code, Google Chrome setzt beispielsweise auf das eigene Open-Source-Projekt V8. JS wurde ursprünglich im Jahr 1995 von Brendan Eich entwickelt. 1997 wurde AngularJS als ECMAScript (ES) normiert. In den folgenden Jahren gab 2 weitere Versionen des Standards, 2009 kamen mit der 5. Version größere Änderungen. Die nächste Version war ES6 im Jahr 2015, ab hier gab es jährlich neue Releases.
-
-%https://www.w3schools.com/js/js_versions.asp}
+JavaScript (JS) ist die Programmiersprache des Internets und wurde ursprünglich im Jahr 1995 von Brendan Eich entwickelt. Alle gängigen Browser besitzen eine Engine zum Kompilieren von JavaScript-Code, Google Chrome setzt beispielsweise auf das eigene Open-Source-Projekt V8. JavaScript wird unter der Bezeichnung ECMAScript standardisiert.
 
 \subsubsection{Type Checking}
 
-JavaScript ist eine dynamisch typisierte Sprache. Typen werden zu Laufzeit bestimmt und müssen nicht angegeben werden:
+JavaScript ist eine dynamisch typisierte Sprache. Typen werden zur Laufzeit bestimmt und müssen nicht angegeben werden. Damit geht die Programmierung nur vermeintlich schneller, denn Typfehler werden erst zur Laufzeit erkannt, auch wenn der Code vorher kompiliert werden konnte. Statisch typisierte Sprachen fordern die Angabe von Typen und kompilieren bei Typ-Fehlern nicht. TypeScript und Flow sind 2 Varianten, JavaScript typsicher zu verwenden.
 
-\begin{verbatim}
-  var sampleNumber = 123;
+\begin{listing}
+\caption{Laufzeit- und Typfehler}
+\label{lst:listing3}
+\begin{minted}{jsx}
+// Dynamische Typisierung
+var sampleNumber = 123;
+splitStringCharacter(sampleNumber); // -> Laufzeit-Fehler
 
-  splitStringCharacter(sampleNumber); // -> Laufzeit-Fehler
-\end{verbatim}
-
-Damit geht die Programmierung nur vermeintlich schneller, denn Typfehler werden erst zur Laufzeit erkannt, auch wenn der Code vorher kompiliert werden konnte.
-
-Statisch typisierte Sprachen fordern die Angabe von Typen und kompilieren bei Typ-Fehlern nicht:
-
-\begin{verbatim}
-  string sampleString = 123; // -> Compiler-Fehler
-
-  number sampleNumber = 123;
-  splitStringCharacter(sampleNumber) // -> Compiler-Fehler
-\end{verbatim}
-
-Es gibt mehrere Möglichkeiten, JavaScript typsicher zu machen und Laufzeit-Fehler zu reduzieren. 
+// Statische Typisierung
+string sampleString = 123; // -> Compiler-Fehler
+number sampleNumber = 123;
+splitStringCharacter(sampleNumber) // -> Compiler-Fehler
+\end{minted}
+\end{listing}
 
 \subsubsection{TypeScript}
-Angular forciert die Nutzung des JavaScript-Supersets TypeScript (TS), ebenfalls eine Implementierung des ECMAScript-Standards und entwickelt von Microsoft. Es erweitert JavaScript mit zusätzlichen Features. JavaScript-Code ist valides TypeScript, nicht umgekehrt. TS wird mit seinem Compiler in gültigen JavaScript-Quelltext in einer gewünschten Zielversion ab ES3 kompiliert.
+Angular forciert die Nutzung des JavaScript-Supersets TypeScript (TS), ebenfalls eine Implementierung des ECMAScript-Standards, entwickelt von Microsoft. Es erweitert JavaScript mit zusätzlichen Features. JavaScript-Code ist valides TypeScript, nicht umgekehrt. TS wird mit seinem Compiler in gültigen JavaScript-Quelltext kompiliert.
 
-Die neuen Features von TypeScript kennen Entwickler aus der objektorientierten Programmierung. TypeScript setzt, wie der Name schon andeutet, auf strengere Typisierung.
-Damit wird der Entwickler unterstützt und die Code-Qualität erhöht. Zwar gehen die Typings nach der Übersetzung verloren, allerdings werden Laufzeitfehler durch die vorgeschobene Kontrolle bereits bei der Entwicklung mit TypeScript reduziert.
-
-https://blog.doubleslash.de/was-ist-eigentlich-typescript/
-
-https://de.wikipedia.org/wiki/TypeScript
+Die neuen Features von TS kennen Entwickler aus der objektorientierten Programmierung. TS setzt, wie der Name schon andeutet, auf strengere Typisierung. Zwar gehen die Typings nach der Übersetzung verloren, allerdings werden Laufzeitfehler durch die vorgeschobene Kontrolle bereits bei der Entwicklung mit TypeScript reduziert.\cite{TypeScript}
 
 \subsubsection{Flow}
 
-React legt sich nicht auf einen Type Checker fest. In der Dokumentation wird sowohl die Installation von TypeScript, als auch Flow beschrieben. Flow ist keine eigenständige Sprache mit Compiler wie TypeScript, sondern ermöglicht Type Checks durch Annotationen. Mit dem Befehl \textit{flow} werden markierte JavaScript-Dateien überprüft. Flow wird wie React von Facebook entwickelt.
-https://flow.org/en/docs/getting-started/
-https://reactjs.org/docs/static-type-checking.html
+React legt sich nicht auf einen Type Checker fest. In der Dokumentation wird sowohl die Installation von TypeScript, als auch Flow beschrieben. Flow ist keine eigenständige Sprache mit eigenem Compiler wie TypeScript, sondern ermöglicht Type Checks durch Annotationen. Mit dem Befehl \inlinecode{flow} werden markierte JavaScript-Dateien überprüft. Flow wird wie React von Facebook entwickelt.\cite{Flow}
 
 \subsection{CSS}
+Mit CSS werden die mit HTML semantisch strukturierten Elemente formatiert, das Styling bleibt dadurch unabhängig von den Inhalten. CSS wird vom W3C standardisiert, Version 3 seit 2000 fortlaufend weiterentwickelt. Neue Versionen gibt es nur noch für einzelne CSS-Module, nicht für den gesamten Standard.\cite{CSS4} 
 
-Cascading Style Sheets, kurz CSS, gehört neben HTML und JavaScript zu den 3 Hauptsprachen des Open Web. Mit CSS werden die mit HTML semantisch strukturierten Elemente formatiert, das Styling bleibt dadurch unabhängig von den Inhalten. CSS wird vom W3C standardisiert, Version 3 seit 2000 fortlaufend weiterentwickelt. Neue Versionen gibt es nur noch für einzelne CSS-Module, nicht für den gesamten Standard.
-TODO: https://developer.mozilla.org/de/docs/Web/CSS
-https://www.xanthir.com/b4Ko0
+Die Arbeitsweise mit CSS selbst ändert sich, anders als bei HTML und JavaScript, für React und Angular nicht. Entwickler können frei unter verschiedenen Präprozessoren und anderen Lösungen entscheiden. In HTML-Templates wird CSS mit kleinen Anpassungen auf gewohnte Art verwendet.
 
-Die Arbeitsweise mit CSS selbst ändert sich für React und Angular im Gegesatz zu HTML und JavaScript nicht. Entwickler können frei unter verschiedene Präpozessoren oder anderen Lösungen entscheiden. Allerdings ändert sich die Verwendung innerhalb der HTML-Templates.
+\subsubsection{Angular}
+Angular erlaubt weiterhin die Nutzung von \inlinecode{class}-Selektoren für HTML-Elemente. Mit Class-Bindings\footnote{siehe: https://angular.io/guide/attribute-binding\#class-binding} können Strings, String-Arrays oder Objekte angegeben werden. Die gewohnte Verknüpfung von HTML-Knoten mit CSS-Klassen ist also weiter gegeben: \mintinline{html+ng2}{<Example class="first second">...</Example>}. Class-Binding kann sich auch auf einzelne Klassen beziehen: \mintinline{html+ng2}{[class.menu-active]="isMenuActive"}. Inline-Styles sind auch in Angular erlaubt und mit dem Style-Binding gibt es erweiterte Möglichkeiten. Es kann direkt auf CSS-Attribute zugreifen: \mintinline{html+ng2}{[style.width.px]="100"}. Auch auswertbare Ausdrücke sind erlaubt: \mintinline{html+ng2}{[style]="styleExpression"}.
 
-In React werden Klassen mit dem className-Attribut zugewiesen: 
-\begin{verbatim}
-render() {
-  return <span className="headline-big highlighted">Headline</span>
-}
-\end{verbatim}
+Allerdings sind externe Stylesheets leichter zu pflegen, eine Vermischung mit Inline-Styles erschwert die Fehlersuche und bricht die Trennung von View-Content und Design.
 
-Durch JSX ergibt sich die Möglichkeit, Styles dynamisch hinzuzufügen: 
+\subsubsection{React}
+In React werden Klassen mit dem className-Attribut zugewiesen:
 
-\begin{verbatim}
+\mintinline{jsx}{<span className="headline-big highlighted">Headline</span>}
+
+Listing \ref{lst:listing4} zeigt, wie Styles in JSX auch dynamisch hinzugefügt werden können. Das \inlinecode{style}-Attribut bleibt erlaubt, allerdings gilt hier ebenfalls, dass solche Inline-Styles vermieden und eigene Stylesheets verwendet werden sollten\footnote{siehe: https://reactjs.org/docs/dom-elements.html\#style}.\cite{StylingReact}
+
+\begin{listing}
+\caption{Dynamisches Styling mit JSX}
+\label{lst:listing4}
+\begin{minted}{jsx}
 render() {
   let className = 'button-save';
-  if (this.props.isForwardable) {
-    className += 'button-highlighted';
+  if (!this.props.hasPermission) {
+    className += 'button-deactivated';
   }
-  return <button className={className}>Activate</button>
+  return <button className={className}>Speichern</button>
 }
-\end{verbatim}
-
-Das style-Attribut ist erlaubt, allerdings sollten solche Inline-Styles vermieden und eigene Stylesheets verwendet werden (TODO % https://reactjs.org/docs/dom-elements.html#style).
-
-TODO https://reactjs.org/docs/faq-styling.html
-
-Angular erlaubt weiterhin die Nutzung von class für HTML-Elemente. Mit Class-Binding können Strings, String-Arrays oder Objekte angegeben werden. Das Objekt ist eine Liste aus Key-Value Paaren mit einem String aus CSS-Klassen und einem Boolean, der angibt, ob die Klassen aktiv sind oder nicht.
-
-\begin{verbatim}
-  <some-element class="first second">...</some-element>
-
-  <some-element [class]="'first second'">...</some-element>
-
-  <some-element [class]="['first', 'second']">...</some-element>
-
-  <some-element [class]="{'first': true, 'second third': false}">...</some-element>
-\end{verbatim}
-
-Class-Binding kann sich auch auf einzelne Klassen beziehen: 
-
-\begin{verbatim}
-  [class.menu-active]="isMenuActive"
-\end{verbatim}
-
-Inline-Styles sind auch in Angular erlaubt und mit dem Style-Binding gibt es erweiterte Möglichkeiten. Man kann direkt auf CSS-Attribute zugreifen: 
-
-\begin{verbatim}
-  [style.width]="100px" 
-  [style.width.px]="100" 
-  [style]="styleExpr"
-
-  styleExpr -> "width: 100px; height: 100px" 
-  oder -> {width: '100px', height: '100px'}
-  oder -> ['width', '100px']
-\end{verbatim}
-
-Allerdings ist auch hier von der Nutzung von Inline-CSS abzuraten. Externe Stylesheets sind leichter zu pflegen, eine Vermischung mit Inline-Styles erschwert die Fehlersuche und bricht die Trennung von View-Content und Design.
-
-% TODO https://angular.io/guide/attribute-binding#class-binding
-https://angular.io/api/common/NgClass
+\end{minted}
+\end{listing}
 
 \subsubsection{Sass}
-Sass vereinfacht CSS und fügt Funktionalitäten hinzu, die die Les- und Wartbarkeit der Style Sheets verbessern, beispielsweise mit Mixins: CSS-Blöcke können als Variablen definiert und an anderen Stellen verwendet werden. Man bezeichnet Sass als Präpozessor, weil ein Compiler die erweiterte Syntax zu nativem CSS verarbeitet. Neben Sass gibt es noch weitere Präpozessoren wie LESS, Stylus oder PostCSS. 
+Sass vereinfacht CSS und fügt Funktionalitäten hinzu, die die Les- und Wartbarkeit der Stylesheets verbessern, beispielsweise mit Mixins: CSS-Blöcke können als Variablen definiert und an anderen Stellen verwendet werden. Sass vereinfacht die Selektierung dadurch, dass sich Selektoren schachteln lassen. Sass wird als Präpozessor\footnote{siehe: https://developer.mozilla.org/de/docs/Glossary/CSS\_Praeprozessor} bezeichnet, weil ein Compiler die erweiterte Syntax zu nativem CSS verarbeitet. Neben Sass gibt es noch weitere Präprozessoren wie LESS, Stylus oder PostCSS.
 
-%TODO  https://developer.mozilla.org/de/docs/Glossary/CSS_Praeprozessor
-
-
-\section{Projekterstellung}
-\subsection{Vorgehensweise}
+\section{Projektaufbau}
+\subsection{Projekterstellung}
 \subsubsection{Angular CLI}
-Die Erstellung eines Angular Projektes erfolgt mit dem Angular CLI (Command Line Interface), welches mit dem Node Package Manager (NPM) installiert wird: \textit{npm install -g @angular/cli}. Das CLI verfügt über einige Befehle, die beispielsweise externe Bibliotheken hinzufügen (\textit{ng add <Bibliothek>}), neue Bestandteile (z.B. Components) anlegen (\textit{ng generate <Schema>}) oder Tests starten (\textit{ng test}). Mit \textit{ng new <Projektname>} wird ein neues Projekt in einem entsprechend benannten Ordner angelegt. Das Projekt ist hier schon startbereit, mit \textit{ng serve --open} kann man die Anwendung im Development Modus starten, durch das Flag wird automatisch der Browser geöffnet (http://localhost:4200/.). Änderungen im Projekt werden erkannt und die Anwendung sofort aktualisiert.
-https://angular.io/guide/setup-local
+Die Erstellung eines Angular Projektes erfolgt mit dem Angular CLI (Command Line Interface), welches mit dem Node Package Manager (NPM) installiert wird: 
+
+\inlinecode{npm install -g @angular/cli}
+
+Das CLI verfügt über Befehle, die z.B. externe Bibliotheken hinzufügen:
+
+\inlinecode{ng add <Bibliothek>}
+
+Neue Bestandteile (z.B. Components) anlegen:
+
+\inlinecode{ng generate <Schema>} 
+
+Oder Tests starten:
+
+\inlinecode{ng test}
+
+Mit \inlinecode{ng new <Projektname>} wird ein neues Projekt in einem entsprechend benannten Ordner angelegt. Das Projekt ist hier schon startbereit, mit \inlinecode{ng serve --open} kann die Anwendung im Development Modus gestartet werden. Durch das Flag wird automatisch der Browser geöffnet (http://localhost:4200/.). Änderungen im Projekt werden erkannt und die Anwendung sofort aktualisiert.\cite{CLI}
 
 \subsubsection{React Toolchains}
-React benötigt als grundsätzlich reine JavaScript-Bibliothek kein umfangreiches Setup. Die einfachste Möglichkeit der Einbindung besteht darin, React innerhalb des \textit{<script>}-Tags einzubinden. Damit lässt sich React zu bestehenden Projekten hinzufügen, um etwa eine schrittweise Migration zu ermöglichen. Für neue Projekte die von Beginn an mit React entwickelt werden sollen, bietet sich eine Toolchain für das entsprechende Anwendungsszenario an. Damit wird die Umgebung für die React-Entwicklung optimiert: Häufig wird bereits eine Grundstruktur und Scripte zum Starten der Anwendung mit erweiterten Debugoptionen generiert. Die einfachste Toolchain stammt ebenfalls von Facebook und heißt \textit{create-react-app}. Mit dem Befehl \textit{npx create-react-app <Projektname>} wie beim Angular CLI ein Projektordner generiert. Durch \textit{npm start} wird die Applikation gehostet (http://localhost:3000/)
-https://github.com/facebook/create-react-app
-https://reactjs.org/docs/create-a-new-react-app.html\#create-react-app
+React benötigt kein umfangreiches Setup. Die einfachste Möglichkeit der Einbindung besteht darin, React innerhalb des \inlinecode{<script>}-Tags zu verknüpfen. Damit lässt sich React zu bestehenden Projekten hinzufügen, um etwa eine schrittweise Migration zu ermöglichen. Für neue Projekte, die von Beginn an mit React entwickelt werden sollen, bietet sich eine Toolchain für das entsprechende Anwendungsszenario an. Damit wird die Umgebung für die React-Entwicklung optimiert: Häufig wird bereits eine Grundstruktur und Scripte zum Starten der Anwendung mit erweiterten Debugoptionen generiert, ähnlich dem Setup einer Angular-Applikation. Die einfachste Toolchain stammt ebenfalls von Facebook und nennt sich \textit{create-react-app}. Mit dem Befehl \inlinecode{npx create-react-app <Projektname>} wie beim Angular CLI ein Projektordner generiert. Durch \inlinecode{npm start} wird die Applikation gehostet (http://localhost:3000/).\cite{CreateReactApp}
 
-\subsection{Aufbau}
+
+\subsection{Dateistruktur}
+Die Frameworks haben nach der Erstellung mit den eben beschriebenen Tools einen ähnlichen Aufbau. Neben einem \textit{src}-Order, der die Ressourcen der Anwendung beinhaltet, gibt es einige Konfigurationsdateien für JavaScript respektive TypeScript, außerdem eine Ordner (\textit{node\_modules}), der die eingebundenen Pakete beinhaltet. Das sind zunächst die Core-Funktionalitäten der Frameworks, gegebenenfalls kommen weitere Bibliotheken dazu (Angular\footnote{siehe: https://angular.io/guide/file-structure}, React\footnote{https://www.pluralsight.com/guides/file-structure-react-applications-created-create-react-app})
+
+Der Entwicklungsprozess beginnt bei beiden Frameworks mit der Root-Komponente, die beim Start eingebunden wird. Dort beginnt die Komponentenstruktur des Projektes. Für Angular ist das \inlinecode{app.component.ts} und das dazugehörige \inlinecode{app.module.ts}, bei React \inlinecode{App.jsx}.
+
+Die Dateistruktur von Angular und React Anwendungen ist direkt abhängig von der Komponentenstruktur. Der Entwickler muss in der Lage sein, gesuchte Dateien schnell zu finden. Eine ordentliche Struktur ist nicht relevant für das Endprodukt, kann jedoch die Entwicklungsgeschwindigkeit beeinträchtigen. Für den jeweiligen Use-Case finden sich im Internet Lösungen, die React-Dokumentation\footnote{siehe: https://reactjs.org/docs/faq-structure.html} bietet einen grundsätzlichen Ansatz, der auch für Angular gelten kann.
